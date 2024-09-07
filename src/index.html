@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=" pt - br ">
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> esportes radicais </title>
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <script src="../data/database.js"></script>
+    </head>
+
+<body>
+
+    <head>
+        <h1>Esportes Radicais no Brasil</h1>
+    </head>
+    <main>
+        <section>
+            <input id="pesquisar" type="text" placeholder="Digite o esporte">
+            <button onclick="buscaEsporte()">Pesquisar</button>
+        </section>
+        <section>
+            <div id="saida"></div>
+        </section>
+    </main>
+    <footer>
+        <p> Ano 2024 Esportes radicais do Brasil.Todos os direitos Reservados
+        <p>
+        <p> Contato por email :esporte@.com</p>
+    </footer>
+
+    <script>
+        function buscaEsporte() {
+            const elementoSaida = document.getElementById("saida");
+            const filtro = document.getElementById("pesquisar");
+            const results = banco.esportes
+                                 .filter(o => o.titulo.toString()
+                                                      .toLowerCase()
+                                                      .includes(filtro.value.toLowerCase()));
+
+            
+            let saidaElemento = ''
+
+            saidaElemento = "<ul>"
+    
+            for (const item of results) {
+                saidaElemento += `<li class="tituloEsporte">${item.titulo}</li>`
+                saidaElemento += `<li class="descricaoEsporte">${item.descricao}</li>`
+            }
+
+            saidaElemento += "</ul>"
+            elementoSaida.innerHTML = saidaElemento
+        }
+    </script>
+
+</body>
+
+</html> 

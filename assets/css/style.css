@@ -1,0 +1,22 @@
+body {
+    background-color: #dddddd9f;
+    text-align: center;
+}
+
+#saida ul {
+    list-style: none;
+}
+
+/* #saida ul li {
+    display: inline;
+} */
+
+#saida ul li.tituloEsporte {
+    font-size: 25px;
+    color: brown;
+}
+
+#saida ul li.descricaoEsporte {
+    font-size: 15px;
+    color: rgb(38, 0, 255);
+}
